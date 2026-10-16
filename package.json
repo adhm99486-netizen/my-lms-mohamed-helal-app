@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "tsc --noEmit > public/tsc-report.txt 2>&1; next build",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
