@@ -159,9 +159,10 @@ export function normalizeSite(raw: any): SiteConfig {
     let id: string;
     let ref: string | undefined;
     if (type === "custom") {
-      ref = typeof x.ref === "string" ? x.ref : "";
-      if (!customBlocks[ref]) continue;
-      id = `custom-${ref}`;
+      const blockRef: string = typeof x.ref === "string" ? x.ref : "";
+      ref = blockRef;
+      if (!customBlocks[blockRef]) continue;
+      id = `custom-${blockRef}`;
     } else {
       id = type;
     }
